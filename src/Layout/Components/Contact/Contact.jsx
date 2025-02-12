@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
     const form = useRef();
@@ -36,26 +37,50 @@ const Contact = () => {
             <p className="text-center text-gray-500">Get in touch with us for any questions or concerns</p>
 
             {/* Contact Info Section */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <div className="text-purple-500 text-2xl mb-2">\ud83d\udccd</div>
-                    <h2 className="font-bold text-lg">Visit Us</h2>
-                    <p>123 Career Street<br />San Francisco, CA 94105</p>
+            {/* Contact Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body items-center text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <FaMapMarkerAlt className="w-8 h-8 text-primary" />
+                        </div>
+                        <h3 className="card-title">Visit Us</h3>
+                        <p className="text-sm">Baridhara</p>
+                        <p className="text-sm">Dhaka-1212</p>
+                    </div>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <div className="text-purple-500 text-2xl mb-2">\ud83d\udcde</div>
-                    <h2 className="font-bold text-lg">Call Us</h2>
-                    <p>+1 (555) 123-4567<br />+1 (555) 987-6543</p>
+
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body items-center text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <FaPhone className="w-8 h-8 text-primary" />
+                        </div>
+                        <h3 className="card-title">Call Us</h3>
+                        <p className="text-sm">+880 1840719423</p>
+                        <p className="text-sm">+880 1754462117</p>
+                    </div>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <div className="text-purple-500 text-2xl mb-2">\ud83d\udce7</div>
-                    <h2 className="font-bold text-lg">Email Us</h2>
-                    <p>contact@jobportal.com<br />support@jobportal.com</p>
+
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body items-center text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <FaEnvelope className="w-8 h-8 text-primary" />
+                        </div>
+                        <h3 className="card-title">Email Us</h3>
+                        <p className="text-sm">contact@jobportal.com</p>
+                        <p className="text-sm">support@jobportal.com</p>
+                    </div>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <div className="text-purple-500 text-2xl mb-2">\ud83d\udd52</div>
-                    <h2 className="font-bold text-lg">Working Hours</h2>
-                    <p>Mon - Fri: 9:00 - 18:00<br />Sat - Sun: Closed</p>
+
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body items-center text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <FaClock className="w-8 h-8 text-primary" />
+                        </div>
+                        <h3 className="card-title">Working Hours</h3>
+                        <p className="text-sm">Mon - Thu: 9:00 - 18:00</p>
+                        <p className="text-sm">Fri - Sat: Closed</p>
+                    </div>
                 </div>
             </div>
 
