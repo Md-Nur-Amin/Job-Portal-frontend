@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaNewspaper, FaUsers } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaApple } from "react-icons/fa6";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+
 
 const Footer = () => {
 
@@ -45,8 +48,15 @@ const Footer = () => {
                 <div className="container mx-auto px-4 py-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Company Info */}
-                        <div className="space-y-4">
-                            <h4 className="text-xl font-bold mb-4">JobPortal</h4>
+                        <div className="space-y-3">
+
+                            <Link to="/" className="flex items-center text-xl font-bold">
+                                <img src="/src/assets/jobPortal.png" alt="Jobtale Logo" className="w-10 h-10 mx-2" />
+                                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text">
+                                    Jobtale
+                                </span>
+                            </Link>
+
                             <p className="opacity-80">Connecting professionals and opportunities worldwide. Your career journey starts here.</p>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
@@ -120,12 +130,12 @@ const Footer = () => {
                         {/* Download App */}
                         <div>
                             <h4 className="text-xl font-bold mb-4">Download Our App</h4>
-                            <p className="opacity-80 mb-4">Get the JobPortal app for seamless job searching on the go.</p>
+                            <p className="opacity-80 mb-4">Get the Jobtale app for seamless job searching on the go.</p>
                             <div className="space-y-2">
-                                <button className="btn btn-outline btn-primary w-full">
+                                <button className="btn btn-outline btn-primary w-full"> <FaApple />
                                     App Store
                                 </button>
-                                <button className="btn btn-outline btn-primary w-full">
+                                <button className="btn btn-outline btn-primary w-full"> <IoLogoGooglePlaystore />
                                     Google Play
                                 </button>
                             </div>
@@ -153,9 +163,10 @@ const Footer = () => {
                                 </a>
                             </div>
                             <div className="flex gap-4 text-sm">
-                                <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+                                <Link to="/terms" className="hover:text-primary transition-colors">Privacy Policy</Link>
+
                                 <span>•</span>
-                                <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+                                <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
                                 <span>•</span>
                                 <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
                             </div>

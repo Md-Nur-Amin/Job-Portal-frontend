@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import Map from '../Map/Map';
 
 const Contact = () => {
     const form = useRef();
@@ -102,7 +103,9 @@ const Contact = () => {
                 <div className="bg-white p-6 rounded-xl shadow-lg">
                     <h2 className="text-xl font-bold mb-4">Our Location</h2>
                     <div className="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg">
-                        <p className="text-gray-500">Map integration would go here<br />(Google Maps, Mapbox, etc.)</p>
+                        <Map></Map>
+
+                        {/* <p className="text-gray-500">Map integration would go here<br />(Google Maps, Mapbox, etc.)</p> */}
                     </div>
                 </div>
             </div>
