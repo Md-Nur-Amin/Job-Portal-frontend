@@ -3,6 +3,7 @@ import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, F
 import { Link } from 'react-router-dom';
 import { FaApple } from "react-icons/fa6";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import jobtale from '../../../assets/jobPortal.png'
 
 
 const Footer = () => {
@@ -22,7 +23,7 @@ const Footer = () => {
         <div>
             <footer className="bg-base-200 text-base-content">
                 {/* Newsletter Section */}
-                <div className="bg-accent text-accent-content py-12">
+                <div className="bg-accent text-accent-content py-12 rounded-t-3xl my-10">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="max-w-md">
@@ -48,10 +49,10 @@ const Footer = () => {
                 <div className="container mx-auto px-4 py-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Company Info */}
-                        <div className="space-y-3">
+                        <div className="space-y-2">
 
                             <Link to="/" className="flex items-center text-xl font-bold">
-                                <img src="/src/assets/jobPortal.png" alt="Jobtale Logo" className="w-10 h-10 mx-2" />
+                                <img src={jobtale} alt="Jobtale Logo" className="w-10 h-10 mx-2" />
                                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text">
                                     Jobtale
                                 </span>

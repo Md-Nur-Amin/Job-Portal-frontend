@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaHome, FaBriefcase, FaUsers, FaUser, FaSun, FaMoon, FaEnvelope, FaBars } from 'react-icons/fa';
 import { IoMdSunny } from "react-icons/io";
 import { MdLogin } from "react-icons/md";
+import jobtale from '../../../assets/jobPortal.png'
 
 
 
@@ -21,6 +22,8 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+
 
     const navLinks = (
         <>
@@ -63,7 +66,7 @@ const Navbar = () => {
                     </Link> */}
 
                     <Link to="/" className="flex items-center text-xl font-bold">
-                        <img src="/src/assets/jobPortal.png" alt="Jobtale Logo" className="w-10 h-10 mb-1 mx-2" />
+                        <img src={jobtale} alt="Jobtale Logo" className="w-10 h-10 mb-1 mx-2" />
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text">
                             Jobtale
                         </span>
