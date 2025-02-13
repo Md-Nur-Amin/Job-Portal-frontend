@@ -36,8 +36,7 @@ const Navbar = () => {
 
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaEnvelope /> <Link to="/contact"> Contact Us </Link> </li>
 
-            <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaUser/> <Link to="/profile">Profile</Link>
-            </li>
+            <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaUser/> <Link to="/profile"> Register Profile</Link> </li>
 
             <li>
                 <button onClick={toggleTheme} className="btn btn-ghost btn-circle">
@@ -49,7 +48,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="bg-white shadow-lg rounded-xl mt-3 mx-5">
+        <div className="bg-white shadow-lg rounded-xl mt-5 mx-5">
 
             <div className="container mx-auto px-4">
 
