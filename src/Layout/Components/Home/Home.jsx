@@ -95,11 +95,11 @@ const Home = () => {
                 </div>
 
                 <div>
-                    <div className="bg-sky-600 py-10 text-2xl font-semibold font-urbanist text-center text-white">
+                    <div className="bg-sky-600 py-16 text-2xl font-semibold font-urbanist text-center text-white">
                         <p>Trusted by the world's best companies</p>
 
                         {/* Updated Icon Section */}
-                        <div className="my-5 flex justify-center items-center space-x-8 text-4xl">
+                        <div className="my-10 flex justify-center items-center space-x-36 text-5xl">
                             <FaEbay />
                             <SiGodaddy />
                             <SiExpedia />
@@ -116,14 +116,14 @@ const Home = () => {
 
             {/* Why choose Jobtale section */}
             <div>
-                <section className="bg-gray-100 py-16">
+                <section className="bg-gray-100 py-20 mx-20">
                     <div className="max-w-6xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Jobtale</h2>
 
                         <div className="flex justify-center mb-8">
-                            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl">
+                            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl">
                                 <img
-                                    src="https://source.unsplash.com/600x300/?technology,career"
+                                    src={jobCom}
                                     alt="Jobtale Illustration"
                                     className="rounded-lg mx-auto"
                                 />
