@@ -4,6 +4,10 @@ import { FaEbay } from "react-icons/fa";
 import { SiGodaddy, SiExpedia, SiInfosys, SiFujitsu } from "react-icons/si";
 import jobCom from "../../../assets/JobIllustrator.jpg";
 import jobPost from "../../../assets/Posts.jpg"
+import grp from "../../../assets/group.png"
+import business from "../../../assets/businessTarget.png"
+import star from "../../../assets/sparkle.png"
+import content from "../../../assets/contentManagement.png"
 
 const Home = () => {
     return (
@@ -116,41 +120,59 @@ const Home = () => {
 
             {/* Why choose Jobtale section */}
             <div>
-                <section className="bg-gray-100 py-20 mx-20">
+                <section className="bg-gray-100 py-20 px-4 md:px-20 my-20 ">
                     <div className="max-w-6xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Jobtale</h2>
 
-                        <div className="flex justify-center mb-8">
-                            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                        <div className="flex  justify-center mb-8">
+                            <div className="bg-white p-2 rounded-lg shadow-lg w-full max-w-6xl">
                                 <img
                                     src={jobCom}
                                     alt="Jobtale Illustration"
-                                    className="rounded-lg mx-auto"
+                                    className="rounded-lg mx-auto h-[200px] md:h-[300px] w-full object-cover"
                                 />
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
-                                <span className="bg-blue-500 text-white p-2 rounded-full">🚀</span>
-                                <p className="text-gray-700">Pioneering Career Growth Through Innovative Solutions</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 md:px-0">
+                            <div className="bg-white py-10 rounded-lg shadow-lg flex flex-col items-center space-y-3 w-full">
+                                <span className="bg-blue-500 text-white p-2 rounded-full flex justify-center items-center">
+                                    <img src={business} alt="" className="w-6 h-6" />
+                                </span>
+                                <p className="text-gray-700 font-bold text-center max-w-xs">
+                                    Pioneering Career Growth Through Innovative Solutions
+                                </p>
                             </div>
-                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
-                                <span className="bg-blue-500 text-white p-2 rounded-full">📊</span>
-                                <p className="text-gray-700">Offering Detailed Insights into New Positions and Career Paths</p>
+
+                            <div className="bg-white py-10 rounded-lg shadow-lg flex flex-col items-center space-y-4 w-full">
+                                <span className="bg-blue-500 text-white p-2 rounded-full flex justify-center items-center">
+                                    <img src={star} alt="" className="w-6 h-6" />
+                                </span>
+                                <p className="text-gray-700 font-bold text-center max-w-xs">
+                                    Tailored Career Solutions for Every Professional
+                                </p>
                             </div>
-                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
-                                <span className="bg-blue-500 text-white p-2 rounded-full">👥</span>
-                                <p className="text-gray-700">Tailored Career Solutions for Every Professional</p>
+
+                            <div className="bg-white py-10 rounded-lg shadow-lg flex flex-col items-center space-y-4 w-full">
+                                <span className="bg-blue-500 text-white p-2 rounded-full flex justify-center items-center">
+                                    <img src={grp} alt="" className="w-6 h-6" />
+                                </span>
+                                <p className="text-gray-700 font-bold text-center max-w-xs">
+                                    Tailored Career Solutions for Every Professional
+                                </p>
                             </div>
-                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
-                                <span className="bg-blue-500 text-white p-2 rounded-full">📈</span>
-                                <p className="text-gray-700">Transforming Career Trajectories with Strategic Insights</p>
+
+                            <div className="bg-white py-10 rounded-lg shadow-lg flex flex-col items-center space-y-4 w-full">
+                                <span className="bg-blue-500 text-white p-2 rounded-full flex justify-center items-center">
+                                    <img src={content} alt="" className="w-6 h-6" />
+                                </span>
+                                <p className="text-gray-700 font-bold text-center max-w-xs">
+                                    Transforming Career Trajectories with Strategic Insights
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
-
             </div>
 
 
