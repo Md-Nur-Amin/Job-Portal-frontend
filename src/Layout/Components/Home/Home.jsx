@@ -57,7 +57,6 @@ const Home = () => {
                 </div>
 
 
-
                 <div className="card-body">
                     <textarea
                         className="textarea textarea-bordered "
@@ -67,12 +66,49 @@ const Home = () => {
                         <button className="btn btn-primary">Post</button>
                     </div>
                 </div>
-
             </div>
 
 
 
 
+
+            <div>
+                <section className="bg-gray-100 py-16">
+                    <div className="max-w-6xl mx-auto text-center">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Jobtale</h2>
+
+                        <div className="flex justify-center mb-8">
+                            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl">
+                                <img
+                                    src="https://source.unsplash.com/600x300/?technology,career"
+                                    alt="Jobtale Illustration"
+                                    className="rounded-lg mx-auto"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
+                                <span className="bg-blue-500 text-white p-2 rounded-full">🚀</span>
+                                <p className="text-gray-700">Pioneering Career Growth Through Innovative Solutions</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
+                                <span className="bg-blue-500 text-white p-2 rounded-full">📊</span>
+                                <p className="text-gray-700">Offering Detailed Insights into New Positions and Career Paths</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
+                                <span className="bg-blue-500 text-white p-2 rounded-full">👥</span>
+                                <p className="text-gray-700">Tailored Career Solutions for Every Professional</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
+                                <span className="bg-blue-500 text-white p-2 rounded-full">📈</span>
+                                <p className="text-gray-700">Transforming Career Trajectories with Strategic Insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
 
 
         </div>
