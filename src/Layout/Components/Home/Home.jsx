@@ -12,7 +12,7 @@ import content from "../../../assets/contentManagement.png"
 const Home = () => {
     return (
         <div className="space-y-8">
-            <div className="card bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-x mb-40">
 
                 <div className=''>
                     <div className="space-y-6 mt-8">
@@ -33,6 +33,7 @@ const Home = () => {
                                 <p className=" text-sm lg:text-base text-white/90 mb-8 max-w-xl mx-auto">
                                     Connect with top companies, discover exciting opportunities, and take the next step in your career journey.
                                 </p>
+
 
                                 {/* Search Bar */}
                                 <div className="bg-base-100 p-4 rounded-lg shadow-xl max-w-3xl mx-auto mb-8">
@@ -64,7 +65,7 @@ const Home = () => {
                 </div>
 
 
-                <div className="card-body">
+                <div className="card-body mx-40  shadow-2xl rounded-3xl">
                     <textarea
                         className="textarea textarea-bordered "
                         placeholder="What's on your mind?"
@@ -77,10 +78,10 @@ const Home = () => {
 
 
             {/* Trusted by section */}
-            <div>
+            <div className=''>
                 <div className="flex justify-center items-center gap-6 max-w-6xl mx-auto">
                     {/* First Image */}
-                    <div className="bg-white p-6 rounded-3xl shadow-lg w-1/2 flex justify-center items-center">
+                    <div className="bg-white p-6 w-1/2 flex justify-center items-center">
                         <img
                             src={jobCom}
                             alt="Jobtale Illustration"
@@ -89,7 +90,7 @@ const Home = () => {
                     </div>
 
                     {/* Second Image */}
-                    <div className="bg-white p-6 rounded-3xl shadow-lg w-1/2 flex justify-center items-center">
+                    <div className="bg-white p-6  w-1/2 flex justify-center items-center">
                         <img
                             src={jobPost}
                             alt="Jobtale Illustration"
