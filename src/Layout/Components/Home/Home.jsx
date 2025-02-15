@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaSearch, FaBriefcase } from "react-icons/fa";
-
+import { FaEbay } from "react-icons/fa";
+import { SiGodaddy, SiExpedia, SiInfosys, SiFujitsu } from "react-icons/si";
+import jobCom from "../../../assets/JobIllustrator.jpg";
+import jobPost from "../../../assets/Posts.jpg"
 
 const Home = () => {
     return (
@@ -69,9 +72,49 @@ const Home = () => {
             </div>
 
 
+            {/* Trusted by section */}
+            <div>
+                <div className="flex justify-center items-center gap-6 max-w-6xl mx-auto">
+                    {/* First Image */}
+                    <div className="bg-white p-6 rounded-3xl shadow-lg w-1/2 flex justify-center items-center">
+                        <img
+                            src={jobCom}
+                            alt="Jobtale Illustration"
+                            className="rounded-lg w-full h-64 object-cover"
+                        />
+                    </div>
+
+                    {/* Second Image */}
+                    <div className="bg-white p-6 rounded-3xl shadow-lg w-1/2 flex justify-center items-center">
+                        <img
+                            src={jobPost}
+                            alt="Jobtale Illustration"
+                            className="rounded-lg w-full h-64 object-cover"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <div className="bg-sky-600 py-10 text-2xl font-semibold font-urbanist text-center text-white">
+                        <p>Trusted by the world's best companies</p>
+
+                        {/* Updated Icon Section */}
+                        <div className="my-5 flex justify-center items-center space-x-8 text-4xl">
+                            <FaEbay />
+                            <SiGodaddy />
+                            <SiExpedia />
+                            <SiInfosys />
+                            <SiFujitsu />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
 
+
+            {/* Why choose Jobtale section */}
             <div>
                 <section className="bg-gray-100 py-16">
                     <div className="max-w-6xl mx-auto text-center">
