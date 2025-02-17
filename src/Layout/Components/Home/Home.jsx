@@ -178,11 +178,14 @@ const Home = () => {
                 </section>
             </div>
 
-            <div className='grid lg:grid-cols-2'>
-                <SendMail></SendMail>
-                <SignUp></SignUp>
+            <div className="grid lg:grid-cols-2 mx-10 items-start gap-4">
+                <SendMail />
 
+                <div className="-mt-20  ">
+                    <SignUp />
+                </div>
             </div>
+
 
 
         </div>
