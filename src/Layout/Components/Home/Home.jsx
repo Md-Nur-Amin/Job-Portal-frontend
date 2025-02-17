@@ -8,6 +8,8 @@ import grp from "../../../assets/group.png"
 import business from "../../../assets/businessTarget.png"
 import star from "../../../assets/sparkle.png"
 import content from "../../../assets/contentManagement.png"
+import SendMail from '../Contact/SendMail';
+import SignUp from '../../AuthForm/SignUp/SignUp';
 
 const Home = () => {
     return (
@@ -176,8 +178,10 @@ const Home = () => {
                 </section>
             </div>
 
-            <div>
-                
+            <div className='grid lg:grid-cols-2'>
+                <SendMail></SendMail>
+                <SignUp></SignUp>
+
             </div>
 
 
