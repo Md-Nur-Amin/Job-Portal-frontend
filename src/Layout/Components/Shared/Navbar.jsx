@@ -11,6 +11,7 @@ import { authContext } from '../../Provider/AuthProvider';
 const Navbar = () => {
 
     const { user, logOut } = useContext(authContext);
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -52,7 +53,7 @@ const Navbar = () => {
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaUser /> <Link to="/SignUp"> Register Profile</Link> </li>
 
 
-            <li className="flex items-center space-x-1 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0">
+            {/* <li className="flex items-center space-x-1 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0">
                 <MdLogin />
                 {user ? (
                     <>
@@ -68,6 +69,44 @@ const Navbar = () => {
                 ) : (
                     <Link to="/login">Log In</Link>
                 )}
+            </li> */}
+
+            <li className="dropdown dropdown-end">
+                {/* 🔹 Profile Icon / Login Icon */}
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                        {user ? (
+                            <img src={user.photoURL} alt="User profile" />
+                        ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-300">
+                                <MdLogin className="text-xl text-gray-700" />
+                            </div>
+                        )}
+                    </div>
+                </label>
+
+                {/* 🔹 Dropdown Menu */}
+                <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44"
+                >
+                    {user ? (
+                        <>
+                            <li><a> {user?.displayName} </a></li>
+                            <li>
+                                <Link to="/profile">My Profile</Link>
+                            </li>
+
+                            <li>
+                                <button onClick={handleLogOut} className="text-red-500">Log Out</button>
+                            </li>
+                        </>
+                    ) : (
+                        <li>
+                            <Link to="/login">Log In</Link>
+                        </li>
+                    )}
+                </ul>
             </li>
 
 
