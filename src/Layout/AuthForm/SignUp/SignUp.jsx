@@ -122,7 +122,7 @@ const SignUp = () => {
 
                         <div className="relative w-full">
                             {/* User Icon Inside Input */}
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 text-lg">
+                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
                                 <CiUser />
                             </span>
 
@@ -139,9 +139,23 @@ const SignUp = () => {
 
                     {/* Photo URL */}
                     <div className="form-control w-full">
-                        <label className="label"><span className="label-text text-lg">Photo URL</span></label>
-                        <input type="text" name="photo" placeholder="Enter photo URL" className="input input-bordered w-full text-lg" required />
+                        <label className="label">
+                            <span className="label-text text-lg">Photo URL</span>
+                        </label>
+                        <div className="relative w-full">
+                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+                                <HiLink />
+                            </span>
+                            <input
+                                type="text"
+                                name="photo"
+                                placeholder="Enter photo URL"
+                                className="input input-bordered w-full text-lg pl-12"
+                                required
+                            />
+                        </div>
                     </div>
+
 
                     {/* Email */}
                     <div className="form-control w-full">
@@ -149,7 +163,7 @@ const SignUp = () => {
                             <span className="label-text text-lg">Email</span>
                         </label>
                         <div className="relative w-full">
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 text-lg">
+                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
                                 <GoMail />
                             </span>
                             <input
@@ -166,7 +180,7 @@ const SignUp = () => {
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text text-lg">Password</span></label>
                         <div className="relative w-full">
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 text-lg">
+                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
                                 <VscLock />
                             </span>
                             <input
