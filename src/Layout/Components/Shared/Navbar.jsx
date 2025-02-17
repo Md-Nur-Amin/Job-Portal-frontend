@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaBriefcase, FaUsers, FaUser, FaSun, FaMoon, FaEnvelope, FaBars } from 'react-icons/fa';
 import { IoMdSunny } from "react-icons/io";
 import { MdLogin } from "react-icons/md";
 import jobtale from '../../../assets/jobPortal.png'
+import { authContext } from '../../Provider/AuthProvider';
 
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(authContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    };
+
     const [theme, setTheme] = useState('light');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,7 +31,6 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
 
 
     const navLinks = (
@@ -43,7 +51,28 @@ const Navbar = () => {
 
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaUser /> <Link to="/SignUp"> Register Profile</Link> </li>
 
-            <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <MdLogin /> <Link to="/login"> Log In</Link> </li>
+
+            <li className="flex items-center space-x-1 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0">
+                <MdLogin />
+                {user ? (
+                    <>
+                        <button onClick={handleLogOut} className="">Log Out</button>
+                        <div className="w-8 h-8 rounded-full overflow-hidden">
+                            <img
+                                src={user.photoURL}
+                                alt="User profile"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </>
+                ) : (
+                    <Link to="/login">Log In</Link>
+                )}
+            </li>
+
+
+
+
 
             <li>
                 <button onClick={toggleTheme} className="btn btn-ghost btn-circle">

@@ -1,146 +1,89 @@
-import React, { useRef, useState } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
-import auth from '../../Auth/firebase.config';
-import { FiAlertTriangle } from "react-icons/fi";
-import Swal from "sweetalert2";
+import React, { useContext, useRef, useState } from 'react';
+import { authContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
-import { FaRegEye, FaRegEyeSlash, FaGoogle, FaGithub } from "react-icons/fa";
-import { signInWithPopup } from "firebase/auth";
-
+import { FiAlertTriangle } from "react-icons/fi";
+import { FaRegEye, FaRegEyeSlash, FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 const Login = () => {
-
+    const { logIn, googleSignIn, githubSignIn, resetPassword } = useContext(authContext);
     const [loginError, setLoginError] = useState('');
-    const emailRef = useRef(null);
     const [showPass, setShowPass] = useState(false);
+    const { signUpWithGoogle, signUpWithGithub } = useContext(authContext);
+    const [email, setEmail] = useState('');
 
 
-    // Providers for Social Auth
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
 
     const handleLogin = e => {
         e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
         setLoginError('');
 
-        console.log(email, password);
-
-        // Firebase Authentication (Moved inside the function)
-        signInWithEmailAndPassword(auth, email, password)
+        logIn(email, password)
             .then(result => {
                 console.log("User logged in:", result.user);
-                Swal.fire({
-                    title: "Success!",
-                    text: "Account created successfully",
-                    icon: "success",
-                    confirmButtonText: "OK",
-                });
             })
             .catch(error => {
                 console.error("Login error:", error.message);
                 setLoginError(error.message);
-
             });
     };
 
     const handleForgetPass = () => {
-        const email = emailRef.current?.value; // Get the email from input field
-
         if (!email) {
-            console.log("Please provide an email"); // ✅ Fixed logging issue
+            setLoginError("Please provide an email");
             return;
         }
 
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-            console.log("Please enter a valid email address");
-            return;
-        }
-
-        sendPasswordResetEmail(auth, email)
+        resetPassword(email)
             .then(() => {
-                console.log("Please check your email");
                 Swal.fire({
-                    title: "Password Reset",
+                    icon: "success",
+                    title: "Email Sent!",
                     text: "A password reset email has been sent to your email address.",
-                    icon: "info",
+                    confirmButtonColor: "#3085d6",
                     confirmButtonText: "OK",
                 });
             })
             .catch(error => {
                 console.error("Error sending password reset email:", error.message);
-            });
-    };
+                setLoginError(error.message);
 
-
-    // Google Signup
-    const handleGoogleSignUp = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
                 Swal.fire({
-                    title: "Success!",
-                    text: "Logged in with Google",
-                    icon: "success",
-                    confirmButtonText: "OK",
+                    icon: "error",
+                    title: "Oops!",
+                    text: error.message,
+                    confirmButtonColor: "#d33",
+                    confirmButtonText: "Try Again",
                 });
-            })
-            .catch((error) => {
-                setLoginError(error.message);  // ✅ Fixed state issue
             });
     };
-
-    // GitHub Signup
-    const handleGitHubSignUp = () => {
-        signInWithPopup(auth, githubProvider)
-            .then((result) => {
-                Swal.fire({
-                    title: "Success!",
-                    text: "Signed up with GitHub successfully",
-                    icon: "success",
-                    confirmButtonText: "OK",
-                });
-            })
-            .catch((error) => {
-                setLoginError(error.message);  // ✅ Fixed state issue
-            });
-    };
-
-
-
-
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center ">
-            <div className=" bg-base-100 w-full max-w-md shadow-2xl p-8 my-5 rounded-2xl">
+        <div className="min-h-screen flex items-center justify-center">
+            <div className="bg-base-100 w-full max-w-md shadow-2xl p-8 my-5 rounded-2xl">
                 <h1 className="text-3xl font-bold text-center mb-5">Login now!</h1>
-
                 <form onSubmit={handleLogin} className="space-y-4">
-                    {/* Email Input */}
                     <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text text-lg">Email</span>
-                        </label>
+                        <label className="label"><span className="label-text text-lg">Email</span></label>
                         <input
                             type="email"
                             name="email"
-                            ref={emailRef}  // ✅ Correctly assigned here
                             placeholder="Enter your email"
                             className="input input-bordered w-full text-lg"
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
 
                     </div>
-
-                    {/* Password Input */}
                     <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text text-lg">Password</span>
-                        </label>
-
+                        <label className="label"><span className="label-text text-lg">Password</span></label>
                         <div className="relative w-full">
                             <input
                                 type={showPass ? "text" : "password"}
@@ -156,52 +99,40 @@ const Login = () => {
                                 {showPass ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                         </div>
-
                         <label className="label">
                             <a onClick={handleForgetPass} href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
-
-                    {/* Login Button */}
                     <div className="form-control mt-4">
                         <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-base py-2 w-full">
                             Login
                         </button>
                     </div>
                 </form>
-
                 {loginError && (
                     <p className="text-red-600 text-center mt-3 flex items-center justify-center gap-2">
-                        <FiAlertTriangle className="text-xl" />
-                        {loginError}
+                        <FiAlertTriangle className="text-xl" /> {loginError}
                     </p>
                 )}
-
                 <div className="text-center my-4">
                     <p className="text-gray-500">or sign up with</p>
                 </div>
-
                 <div className="flex flex-col gap-3">
-                    <button
-                        onClick={handleGoogleSignUp}
-                        className="btn bg-red-600 hover:bg-red-700 text-white text-base py-2 w-full flex items-center justify-center gap-2"
-                    >
-                        <FaGoogle className="text-lg" /> Sign Up with Google
+                    <button onClick={signUpWithGoogle}
+                        className="btn btn-outline flex items-center justify-center gap-2">
+                        <FcGoogle className="text-lg" /> Continue with Google
+
                     </button>
 
-                    <button
-                        onClick={handleGitHubSignUp}
-                        className="btn bg-gray-800 hover:bg-gray-900 text-white text-base py-2 w-full flex items-center justify-center gap-2"
-                    >
-                        <FaGithub className="text-lg" /> Sign Up with GitHub
+                    <button onClick={signUpWithGithub}
+                        className="btn btn-outline flex items-center justify-center gap-2">
+                        <FaGithub className="text-lg" /> Continue with GitHub
                     </button>
+
                 </div>
-
                 <div className='my-2 py-3'>
-                    <p className='text-center'>Do nor have an account ? <Link to="/SignUp" className='underline text-blue-500'> Register here </Link> </p>
+                    <p className='text-center'>Don't have an account? <Link to="/SignUp" className='underline text-blue-500'>Register here</Link></p>
                 </div>
-
-
             </div>
         </div>
     );
