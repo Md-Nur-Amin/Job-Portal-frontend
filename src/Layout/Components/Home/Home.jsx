@@ -14,7 +14,7 @@ import Login from '../../AuthForm/Login/Login';
 
 const Home = () => {
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 mb-40">
             <div className="card bg-base-100 shadow-x mb-40">
 
                 <div className=''>
@@ -179,13 +179,16 @@ const Home = () => {
                 </section>
             </div>
 
-            <div className="grid lg:grid-cols-2 mx-10 items-start gap-0 shadow-xl rounded-3xl">
-                <SendMail />
 
-                <div className="-mt-20">
-                    <Login></Login>
+            {/* Contact Section */}
+            <div className="grid lg:grid-cols-2 items-center gap-10 bg-slate-100 px-6 pl-6 lg:pl-20 py-10 ">
+                <SendMail />
+                <div>
+                    <Login />
                 </div>
             </div>
+
+
 
 
 
