@@ -9,7 +9,8 @@ import business from "../../../assets/businessTarget.png"
 import star from "../../../assets/sparkle.png"
 import content from "../../../assets/contentManagement.png"
 import SendMail from '../Contact/SendMail';
-import SignUp from '../../AuthForm/SignUp/SignUp';
+import Login from '../../AuthForm/Login/Login';
+
 
 const Home = () => {
     return (
@@ -178,11 +179,11 @@ const Home = () => {
                 </section>
             </div>
 
-            <div className="grid lg:grid-cols-2 mx-10 items-start gap-4">
+            <div className="grid lg:grid-cols-2 mx-10 items-start gap-0 shadow-xl rounded-3xl">
                 <SendMail />
 
-                <div className="-mt-20  ">
-                    <SignUp />
+                <div className="-mt-20">
+                    <Login></Login>
                 </div>
             </div>
 
