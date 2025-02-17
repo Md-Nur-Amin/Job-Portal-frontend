@@ -96,6 +96,9 @@ const Navbar = () => {
                             <li>
                                 <Link to="/profile">My Profile</Link>
                             </li>
+                            <li>
+                                <Link to="/updateProfile">Update Profile</Link>
+                            </li>
 
                             <li>
                                 <button onClick={handleLogOut} className="text-red-500">Log Out</button>

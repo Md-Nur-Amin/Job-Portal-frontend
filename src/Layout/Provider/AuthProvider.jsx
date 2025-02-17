@@ -6,6 +6,7 @@
 //     signOut,
 //     signInWithEmailAndPassword,
 //     signInWithPopup,
+//     sendPasswordResetEmail, // ✅ Import reset function
 //     GoogleAuthProvider,
 //     GithubAuthProvider
 // } from "firebase/auth";
@@ -35,6 +36,10 @@
 //         return signInWithPopup(auth, githubProvider);
 //     };
 
+//     const resetPassword = (email) => {
+//         return sendPasswordResetEmail(auth, email); // ✅ Add Reset Password Function
+//     };
+
 //     const logOut = () => {
 //         return signOut(auth);
 //     };
@@ -54,7 +59,8 @@
 //         logIn,
 //         logOut,
 //         signUpWithGoogle,
-//         signUpWithGithub
+//         signUpWithGithub,
+//         resetPassword, // ✅ Add resetPassword to context
 //     };
 
 //     return <authContext.Provider value={authInfo}>{children}</authContext.Provider>;
@@ -71,7 +77,8 @@ import {
     signOut,
     signInWithEmailAndPassword,
     signInWithPopup,
-    sendPasswordResetEmail, // ✅ Import reset function
+    sendPasswordResetEmail,
+    updateProfile, // ✅ Import updateProfile function
     GoogleAuthProvider,
     GithubAuthProvider
 } from "firebase/auth";
@@ -85,8 +92,24 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
+    // ✅ Create New User
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
+    };
+
+    // ✅ Update User Profile (Name & Photo)
+    const updateUserProfile = (name, photoURL) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL,
+        }).then(() => {
+            // Update local state after Firebase update
+            setUser((prevUser) => ({
+                ...prevUser,
+                displayName: name,
+                photoURL: photoURL,
+            }));
+        });
     };
 
     const logIn = (email, password) => {
@@ -102,30 +125,33 @@ const AuthProvider = ({ children }) => {
     };
 
     const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email); // ✅ Add Reset Password Function
+        return sendPasswordResetEmail(auth, email);
     };
 
     const logOut = () => {
         return signOut(auth);
     };
 
+    // ✅ Listen for Auth State Changes
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log("User in the auth state change", currentUser);
+            console.log("User state changed:", currentUser);
             setUser(currentUser);
         });
 
         return () => unsubscribe();
     }, []);
 
+    // ✅ Provide All Auth Functions in Context
     const authInfo = {
         user,
         createUser,
+        updateUserProfile, // ✅ Added updateProfile function
         logIn,
         logOut,
         signUpWithGoogle,
         signUpWithGithub,
-        resetPassword, // ✅ Add resetPassword to context
+        resetPassword,
     };
 
     return <authContext.Provider value={authInfo}>{children}</authContext.Provider>;
