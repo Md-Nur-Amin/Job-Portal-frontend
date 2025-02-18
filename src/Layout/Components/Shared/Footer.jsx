@@ -120,7 +120,7 @@ const Footer = () => {
                                     <a href="#" className="hover:text-primary transition-colors">Interview Tips</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:text-primary transition-colors">Resume Builder</a>
+                                    <Link to="/resumeBuilder" className="hover:text-primary transition-colors">Resume Builder</Link>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-primary transition-colors">Help Center</a>

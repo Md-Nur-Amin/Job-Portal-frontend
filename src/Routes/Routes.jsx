@@ -9,13 +9,14 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../Layout/Components/UpdateProfile/UpdateProfile";
 import Profile from "../Layout/Components/Profile/Profile";
 import ResumeBuilder from "../Layout/Components/ResumeBuilder/ResumeBuilder";
+import ErrorPage from "../Layout/Components/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
-
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
