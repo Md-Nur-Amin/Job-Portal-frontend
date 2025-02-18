@@ -48,7 +48,7 @@ const Home = () => {
                                             cursor
                                             cursorStyle="|"
                                             typeSpeed={40}
-                                            deleteSpeed={30}
+                                            deleteSpeed={40}
                                         />
                                     </p>
                                 </div>
@@ -100,7 +100,7 @@ const Home = () => {
             <div className=''>
                 <div className="flex justify-center items-center lg:gap-6 max-w-6xl mx-auto">
                     {/* First Image */}
-                    <div className="bg-white p-6 w-1/2 flex justify-center items-center">
+                    <div className="bg-white p-1 lg:p-6 w-1/2 flex justify-center items-center">
                         <img
                             src={jobCom}
                             alt="Jobtale Illustration"
@@ -109,7 +109,7 @@ const Home = () => {
                     </div>
 
                     {/* Second Image */}
-                    <div className="bg-white p-6 w-1/2 flex justify-center items-center">
+                    <div className="bg-white p-1 lg:p-6 w-1/2 flex justify-center items-center">
                         <img
                             src={jobPost}
                             alt="Jobtale Illustration"

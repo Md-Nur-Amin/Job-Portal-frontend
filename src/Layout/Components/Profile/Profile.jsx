@@ -53,10 +53,17 @@ const Profile = () => {
 
                 {/* Edit Profile Button */}
                 <div className="form-control mt-6">
-                    <Link to="/update-profile" className="btn bg-indigo-600 hover:bg-indigo-700 text-white">
+                    <Link to="/updateProfile" className="btn bg-indigo-600 hover:bg-indigo-700 text-white">
                         Edit Profile
                     </Link>
                 </div>
+
+                <div className="form-control mt-6">
+                    <Link to="/resumeBuilder" className="btn bg-indigo-600 hover:bg-indigo-700 text-white">
+                        Build Your Resume
+                    </Link>
+                </div>
+                
             </div>
         </div>
     );

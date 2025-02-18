@@ -8,6 +8,7 @@ import Login from "../Layout/AuthForm/Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../Layout/Components/UpdateProfile/UpdateProfile";
 import Profile from "../Layout/Components/Profile/Profile";
+import ResumeBuilder from "../Layout/Components/ResumeBuilder/ResumeBuilder";
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path:"/updateProfile",
           element: <PrivateRoute> <UpdateProfile></UpdateProfile> </PrivateRoute>
+        },
+        {
+          path: "/resumeBuilder",
+          element: <PrivateRoute> <ResumeBuilder></ResumeBuilder> </PrivateRoute>
         }
       ]
     },
