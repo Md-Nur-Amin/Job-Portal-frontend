@@ -10,6 +10,7 @@ import star from "../../../assets/sparkle.png"
 import content from "../../../assets/contentManagement.png"
 import SendMail from '../Contact/SendMail';
 import Login from '../../AuthForm/Login/Login';
+import { Typewriter } from 'react-simple-typewriter';
 
 
 const Home = () => {
@@ -30,12 +31,27 @@ const Home = () => {
                             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"></div>
 
                             <div className="relative container mx-auto px-4 text-center">
-                                <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                                {/* <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
                                     Find Your Dream Job Today
                                 </h1>
                                 <p className=" text-sm lg:text-base text-white/90 mb-8 max-w-xl mx-auto">
                                     Connect with top companies, discover exciting opportunities, and take the next step in your career journey.
-                                </p>
+                                </p> */}
+                                <div className="text-center">
+                                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                                        Find Your Dream Job Today
+                                    </h1>
+                                    <p className="text-base lg:text-base text-white/90 mb-8 max-w-xl mx-auto">
+                                        <Typewriter
+                                            words={['Connect with top companies, discover exciting opportunities, and take the next step in your career journey.']}
+                                            loop={false}
+                                            cursor
+                                            cursorStyle="|"
+                                            typeSpeed={40}
+                                            deleteSpeed={30}
+                                        />
+                                    </p>
+                                </div>
 
 
                                 {/* Search Bar */}
@@ -57,7 +73,7 @@ const Home = () => {
                                                 className="input input-bordered w-full pl-10"
                                             />
                                         </div>
-                                        <button className="btn btn-primary">Search Jobs</button>
+                                        <button className="btn bg-sky-600 text-black hover:bg-sky-500">Search Jobs</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,13 +84,13 @@ const Home = () => {
                 </div>
 
 
-                <div className="card-body mx-40  shadow-2xl rounded-3xl">
+                <div className="card-body mx-2 lg:mx-40 shadow-2xl rounded-3xl">
                     <textarea
                         className="textarea textarea-bordered "
                         placeholder="What's on your mind?"
                     />
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Post</button>
+                        <button className="btn bg-sky-600 text-black hover:bg-sky-500">Post</button>
                     </div>
                 </div>
             </div>
@@ -82,22 +98,22 @@ const Home = () => {
 
             {/* Trusted by section */}
             <div className=''>
-                <div className="flex justify-center items-center gap-6 max-w-6xl mx-auto">
+                <div className="flex justify-center items-center lg:gap-6 max-w-6xl mx-auto">
                     {/* First Image */}
                     <div className="bg-white p-6 w-1/2 flex justify-center items-center">
                         <img
                             src={jobCom}
                             alt="Jobtale Illustration"
-                            className="rounded-lg w-full h-64 object-cover"
+                            className="rounded-lg w-full lg:h-64 object-cover"
                         />
                     </div>
 
                     {/* Second Image */}
-                    <div className="bg-white p-6  w-1/2 flex justify-center items-center">
+                    <div className="bg-white p-6 w-1/2 flex justify-center items-center">
                         <img
                             src={jobPost}
                             alt="Jobtale Illustration"
-                            className="rounded-lg w-full h-64 object-cover"
+                            className="rounded-lg w-full lg:h-64 object-cover"
                         />
                     </div>
                 </div>
@@ -107,7 +123,7 @@ const Home = () => {
                         <p>Trusted by the world's best companies</p>
 
                         {/* Updated Icon Section */}
-                        <div className="my-10 flex justify-center items-center space-x-36 text-5xl">
+                        <div className="my-10 flex justify-center items-center space-x-6 lg:space-x-36 text-4xl lg:text-5xl">
                             <FaEbay />
                             <SiGodaddy />
                             <SiExpedia />
