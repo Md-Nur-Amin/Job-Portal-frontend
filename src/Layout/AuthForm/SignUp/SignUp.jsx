@@ -191,10 +191,10 @@ const SignUp = () => {
         //     </div>
         // </div>
 
-        <div className="min-h-screen flex items-stretch m-10">
+        <div className="min-h-screen lg:flex items-stretch mx-2 m-10 my-32">
             {/* Sidebar Section */}
-            <div className="w-2/3  bg-blue-600 text-white p-10 flex flex-col justify-center">
-                <h1 className="text-4xl font-bold mb-5 leading-tight">
+            <div className=" lg:w-2/3  bg-blue-600 text-white p-10 flex flex-col justify-center shadow-2xl rounded-none lg:rounded-l-2xl ">
+                <h1 className="text-4xl font-bold mb-5 lg:leading-tight">
                     Let's setup your Operating Agreement
                 </h1>
                 <p className="text-lg opacity-80">
@@ -203,8 +203,8 @@ const SignUp = () => {
             </div>
 
             {/* Form Section (Sticking to Sidebar) */}
-            <div className="w-1/2 flex justify-center items-center">
-                <div className="card bg-base-100 w-full max-w-xl shadow-2xl p-10">
+            <div className="lg:w-1/2 flex justify-center items-center ">
+                <div className="card bg-base-100 w-full max-w-xl shadow-2xl p-10 rounded-none lg:rounded-r-2xl">
                     <h1 className="text-3xl font-bold text-center mb-5">Register Now!</h1>
 
                     {/* 🔹 Registration Form */}
