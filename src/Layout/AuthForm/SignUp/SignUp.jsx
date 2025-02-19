@@ -85,148 +85,217 @@ const SignUp = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <div className="card bg-base-100 w-full max-w-md shadow-2xl p-8 my-10">
-                <h1 className="text-3xl font-bold text-center mb-5">Register Now!</h1>
+        // <div className="min-h-screen flex items-stretch my-24">
+        //     {/* Sidebar Section */}
 
-                {/* 🔹 User Type Toggle */}
-                <div className="flex justify-center gap-4 mb-5">
-                    <button
-                        type="button"
-                        className={`px-4 py-2 rounded-lg transition-all ${userType === 'job_seeker' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'
-                            }`}
-                        onClick={() => setUserType('job_seeker')}
-                    >
-                        Job Seeker
-                    </button>
-                    <button
-                        type="button"
-                        className={`px-4 py-2 rounded-lg transition-all ${userType === 'employer' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'
-                            }`}
-                        onClick={() => setUserType('employer')}
-                    >
-                        Employer
-                    </button>
-                </div>
-
-                {/* 🔹 Registration Form */}
-                <form onSubmit={handleRegister} className="space-y-4">
-                    {/* ✅ Hidden Input for User Type */}
-                    <input type="hidden" name="userType" value={userType} />
+        //     <div className="w-2/5 bg-blue-600 text-white p-10 flex flex-col justify-center flex-1">
+        //         {/* Heading & Description */}
+        //         <h1 className="text-4xl font-bold mb-5 leading-tight">
+        //             Let's setup your Operating Agreement
+        //         </h1>
+        //         <p className="text-lg opacity-80">
+        //             All-in-one solution to form your business in the state. Form a new company from scratch or onboard your existing US company.
+        //         </p>
+        //     </div>
 
 
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text text-lg">Name</span>
-                        </label>
+        //     {/* Form Section */}
+        //     <div className="w-3/5 flex justify-center p-10 ml-10">
+        //         <div className="card bg-base-100 w-full max-w-lg shadow-2xl p-8">
+        //             <h1 className="text-3xl font-bold text-center mb-5">Register Now!</h1>
 
-                        <div className="relative w-full">
-                            {/* User Icon Inside Input */}
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
-                                <CiUser />
-                            </span>
+        //             {/* 🔹 Registration Form */}
+        //             <form onSubmit={handleRegister} className="space-y-4">
+        //                 <input type="hidden" name="userType" value={userType} />
 
-                            {/* Name Input */}
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Enter your name"
-                                className="input input-bordered w-full text-lg pl-12"
-                                required
-                            />
+        //                 {/* Name Input */}
+        //                 <div className="form-control w-full">
+        //                     <label className="label"><span className="label-text text-lg">Name</span></label>
+        //                     <div className="relative w-full">
+        //                         <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+        //                             <CiUser />
+        //                         </span>
+        //                         <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full text-lg pl-12" required />
+        //                     </div>
+        //                 </div>
+
+        //                 {/* Photo URL */}
+        //                 <div className="form-control w-full">
+        //                     <label className="label"><span className="label-text text-lg">Photo URL</span></label>
+        //                     <div className="relative w-full">
+        //                         <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+        //                             <HiLink />
+        //                         </span>
+        //                         <input type="text" name="photo" placeholder="Enter photo URL" className="input input-bordered w-full text-lg pl-12" required />
+        //                     </div>
+        //                 </div>
+
+        //                 {/* Email */}
+        //                 <div className="form-control w-full">
+        //                     <label className="label"><span className="label-text text-lg">Email</span></label>
+        //                     <div className="relative w-full">
+        //                         <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+        //                             <GoMail />
+        //                         </span>
+        //                         <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full text-lg pl-12" required />
+        //                     </div>
+        //                 </div>
+
+        //                 {/* Password */}
+        //                 <div className="form-control w-full">
+        //                     <label className="label"><span className="label-text text-lg">Password</span></label>
+        //                     <div className="relative w-full">
+        //                         <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+        //                             <VscLock />
+        //                         </span>
+        //                         <input type={showPass ? "text" : "password"} name="password" placeholder="Enter your password" className="input input-bordered w-full text-lg pl-12" required />
+        //                         <span onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl text-gray-500">
+        //                             {showPass ? <FaRegEyeSlash /> : <FaRegEye />}
+        //                         </span>
+        //                     </div>
+        //                 </div>
+
+        //                 {/* Terms & Conditions */}
+        //                 <div className="flex items-center gap-2">
+        //                     <input type="checkbox" name="terms" id="terms" />
+        //                     <label htmlFor="terms">I agree to the <Link to="/terms" className="text-blue-500 underline">terms and conditions</Link></label>
+        //                 </div>
+
+        //                 {/* Submit Button */}
+        //                 <div className="form-control mt-4">
+        //                     <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-lg py-2 w-full">Register</button>
+        //                 </div>
+        //             </form>
+
+        //             {/* 🔹 Error & Success Messages */}
+        //             {success && <p className="text-green-600 text-center mt-3">{success}</p>}
+        //             {registerError && <p className="text-red-600 text-center mt-3 flex items-center justify-center gap-2"><FiAlertTriangle className="text-xl" />{registerError}</p>}
+
+        //             {/* 🔹 Login Link */}
+        //             <div className="my-2 text-center">
+        //                 <p>Already have an account? <Link to="/login" className="underline text-blue-500"> Log In </Link></p>
+        //             </div>
+
+        //             <div className="divider">OR</div>
+
+        //             {/* 🔹 Social Media Login */}
+        //             <div className="flex flex-col gap-3">
+        //                 <button onClick={signUpWithGoogle} className="btn btn-outline flex items-center justify-center gap-2">
+        //                     <FcGoogle className="text-lg" /> Continue with Google
+        //                 </button>
+        //                 <button onClick={signUpWithGithub} className="btn btn-outline flex items-center justify-center gap-2">
+        //                     <FaGithub className="text-lg" /> Continue with GitHub
+        //                 </button>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
+
+        <div className="min-h-screen flex items-stretch m-10">
+            {/* Sidebar Section */}
+            <div className="w-2/3  bg-blue-600 text-white p-10 flex flex-col justify-center">
+                <h1 className="text-4xl font-bold mb-5 leading-tight">
+                    Let's setup your Operating Agreement
+                </h1>
+                <p className="text-lg opacity-80">
+                    All-in-one solution to form your business in the state. Form a new company from scratch or onboard your existing US company.
+                </p>
+            </div>
+
+            {/* Form Section (Sticking to Sidebar) */}
+            <div className="w-1/2 flex justify-center items-center">
+                <div className="card bg-base-100 w-full max-w-xl shadow-2xl p-10">
+                    <h1 className="text-3xl font-bold text-center mb-5">Register Now!</h1>
+
+                    {/* 🔹 Registration Form */}
+                    <form onSubmit={handleRegister} className="space-y-4">
+                        
+
+                        {/* Name Input */}
+                        <div className="form-control w-full">
+                            <label className="label"><span className="label-text text-lg">Name</span></label>
+                            <div className="relative w-full">
+                                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+                                    <CiUser />
+                                </span>
+                                <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full text-lg pl-12" required />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Photo URL */}
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text text-lg">Photo URL</span>
-                        </label>
-                        <div className="relative w-full">
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
-                                <HiLink />
-                            </span>
-                            <input
-                                type="text"
-                                name="photo"
-                                placeholder="Enter photo URL"
-                                className="input input-bordered w-full text-lg pl-12"
-                                required
-                            />
+                        {/* Photo URL */}
+                        <div className="form-control w-full">
+                            <label className="label"><span className="label-text text-lg">Photo URL</span></label>
+                            <div className="relative w-full">
+                                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+                                    <HiLink />
+                                </span>
+                                <input type="text" name="photo" placeholder="Enter photo URL" className="input input-bordered w-full text-lg pl-12" required />
+                            </div>
                         </div>
-                    </div>
 
-
-                    {/* Email */}
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text text-lg">Email</span>
-                        </label>
-                        <div className="relative w-full">
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
-                                <GoMail />
-                            </span>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                className="input input-bordered w-full text-lg pl-12"
-                                required
-                            />
+                        {/* Email */}
+                        <div className="form-control w-full">
+                            <label className="label"><span className="label-text text-lg">Email</span></label>
+                            <div className="relative w-full">
+                                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+                                    <GoMail />
+                                </span>
+                                <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full text-lg pl-12" required />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Password */}
-                    <div className="form-control w-full">
-                        <label className="label"><span className="label-text text-lg">Password</span></label>
-                        <div className="relative w-full">
-                            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
-                                <VscLock />
-                            </span>
-                            <input
-                                type={showPass ? "text" : "password"}
-                                name="password" placeholder="Enter your password"
-                                className="input input-bordered w-full text-lg pl-12"
-                                required />
-                            <span onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl text-gray-500">
-                                {showPass ? <FaRegEyeSlash /> : <FaRegEye />}
-                            </span>
+                        {/* Password */}
+                        <div className="form-control w-full">
+                            <label className="label"><span className="label-text text-lg">Password</span></label>
+                            <div className="relative w-full">
+                                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-lg">
+                                    <VscLock />
+                                </span>
+                                <input type={showPass ? "text" : "password"} name="password" placeholder="Enter your password" className="input input-bordered w-full text-lg pl-12" required />
+                                <span onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl text-gray-500">
+                                    {showPass ? <FaRegEyeSlash /> : <FaRegEye />}
+                                </span>
+                            </div>
                         </div>
+
+                        {/* Terms & Conditions */}
+                        <div className="flex items-center gap-2">
+                            <input type="checkbox" name="terms" id="terms" />
+                            <label htmlFor="terms">I agree to the <Link to="/terms" className="text-blue-500 underline">terms and conditions</Link></label>
+                        </div>
+
+                        {/* Submit Button */}
+                        <div className="form-control mt-4">
+                            <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-lg py-2 w-full">Register</button>
+                        </div>
+                    </form>
+
+                    {/* 🔹 Error & Success Messages */}
+                    {success && <p className="text-green-600 text-center mt-3">{success}</p>}
+                    {registerError && <p className="text-red-600 text-center mt-3 flex items-center justify-center gap-2"><FiAlertTriangle className="text-xl" />{registerError}</p>}
+
+                    {/* 🔹 Login Link */}
+                    <div className="my-2 text-center">
+                        <p>Already have an account? <Link to="/login" className="underline text-blue-500"> Log In </Link></p>
                     </div>
 
-                    {/* Terms & Conditions */}
-                    <div className="flex items-center gap-2">
-                        <input type="checkbox" name="terms" id="terms" />
-                        <label htmlFor="terms">I agree to the <Link to="/terms" className="text-blue-500 underline">terms and conditions</Link></label>
+                    <div className="divider">OR</div>
+
+                    {/* 🔹 Social Media Login */}
+                    <div className="flex flex-col gap-3">
+                        <button onClick={signUpWithGoogle} className="btn btn-outline flex items-center justify-center gap-2">
+                            <FcGoogle className="text-lg" /> Continue with Google
+                        </button>
+                        <button onClick={signUpWithGithub} className="btn btn-outline flex items-center justify-center gap-2">
+                            <FaGithub className="text-lg" /> Continue with GitHub
+                        </button>
                     </div>
-
-                    <div className="form-control mt-4">
-                        <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-base py-2 w-full">Register</button>
-                    </div>
-                </form>
-
-                {/* 🔹 Error & Success Messages */}
-                {success && <p className="text-green-600 text-center mt-3">{success}</p>}
-                {registerError && <p className="text-red-600 text-center mt-3 flex items-center justify-center gap-2"><FiAlertTriangle className="text-xl" />{registerError}</p>}
-
-                {/* 🔹 Login Link */}
-                <div className="my-2 text-center">
-                    <p>Already have an account? <Link to="/login" className="underline text-blue-500"> Log In </Link></p>
-                </div>
-
-                <div className="divider">OR</div>
-
-                {/* 🔹 Social Media Login */}
-                <div className="flex flex-col gap-3">
-                    <button onClick={signUpWithGoogle} className="btn btn-outline flex items-center justify-center gap-2">
-                        <FcGoogle className="text-lg" /> Continue with Google
-                    </button>
-                    <button onClick={signUpWithGithub} className="btn btn-outline flex items-center justify-center gap-2">
-                        <FaGithub className="text-lg" /> Continue with GitHub
-                    </button>
                 </div>
             </div>
         </div>
+
+
+
     );
 };
 
