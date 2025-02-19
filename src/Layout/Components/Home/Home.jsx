@@ -73,7 +73,7 @@ const Home = () => {
                                                 className="input input-bordered w-full pl-10"
                                             />
                                         </div>
-                                        <button className="btn bg-sky-600 text-black hover:bg-sky-500">Search Jobs</button>
+                                        <button className="btn bg-sky-500 text-black hover:bg-sky-400">Search Jobs</button>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const Home = () => {
                         placeholder="What's on your mind?"
                     />
                     <div className="card-actions justify-end">
-                        <button className="btn bg-sky-600 text-black hover:bg-sky-500">Post</button>
+                        <button className="btn btn-sm rounded-xl bg-sky-500 text-black hover:bg-sky-400">Post</button>
                     </div>
                 </div>
             </div>

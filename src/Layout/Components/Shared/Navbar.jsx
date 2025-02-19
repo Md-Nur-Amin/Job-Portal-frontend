@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaHome, FaBriefcase, FaUsers, FaUser, FaSun, FaMoon, FaEnvelope, FaBars } from 'react-icons/fa';
 import { IoMdSunny } from "react-icons/io";
 import { MdLogin } from "react-icons/md";
-import jobtale from '../../../assets/jobPortal.png'
+
 import { authContext } from '../../Provider/AuthProvider';
+import jobLogo from '../../../assets/logo2removebg.png'
 
 
 
@@ -88,25 +89,25 @@ const Navbar = () => {
                 {/* 🔹 Dropdown Menu */}
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44"
+                    className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-36"
                 >
                     {user ? (
                         <>
-                            <li><a> {user?.displayName} </a></li>
+                            <li><a className='font-medium'> {user?.displayName} </a></li>
                             <li>
-                                <Link to="/profile">My Profile</Link>
+                                <Link to="/profile" className='font-medium'>My Profile</Link>
                             </li>
                             <li>
-                                <Link to="/updateProfile">Update Profile</Link>
+                                <Link to="/updateProfile" className='font-medium'>Update Profile</Link>
                             </li>
 
                             <li>
-                                <button onClick={handleLogOut} className="text-red-500">Log Out</button>
+                                <button onClick={handleLogOut} className="text-red-500 medium">Log Out</button>
                             </li>
                         </>
                     ) : (
                         <li>
-                            <Link to="/login">Log In</Link>
+                            <Link to="/login" className='font-medium'>Log In</Link>
                         </li>
                     )}
                 </ul>
@@ -137,7 +138,7 @@ const Navbar = () => {
                     </Link> */}
 
                     <Link to="/" className="flex items-center text-xl font-bold">
-                        <img src={jobtale} alt="Jobtale Logo" className="w-10 h-10 mb-1 mx-2" />
+                        <img src={jobLogo} alt="Jobtale Logo" className="w-10 h-10 mb-1 mx-2" />
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text">
                             Jobtale
                         </span>

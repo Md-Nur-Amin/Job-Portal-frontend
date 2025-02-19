@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, F
 import { Link } from 'react-router-dom';
 import { FaApple } from "react-icons/fa6";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
-import jobtale from '../../../assets/jobPortal.png'
+import jobLogo from '../../../assets/logo2removebg.png'
 
 
 const Footer = () => {
@@ -52,7 +52,7 @@ const Footer = () => {
                         <div className="space-y-2">
 
                             <Link to="/" className="flex items-center text-xl font-bold">
-                                <img src={jobtale} alt="Jobtale Logo" className="w-10 h-10 mx-2" />
+                                <img src={jobLogo} alt="Jobtale Logo" className="w-10 h-10 mx-2" />
                                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text">
                                     Jobtale
                                 </span>

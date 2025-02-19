@@ -1,5 +1,5 @@
 
-import errimg from '../../../assets/error.jpg'
+import errimg from '../../../assets/errorRemovebg.png'
 
 
 import React from 'react';
