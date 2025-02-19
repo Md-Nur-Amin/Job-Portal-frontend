@@ -191,7 +191,7 @@ const SignUp = () => {
         //     </div>
         // </div>
 
-        <div className="min-h-screen lg:flex items-stretch mx-2 m-10 my-32">
+        <div className="min-h-screen lg:flex items-stretch mx-2 m-10 my-20">
             {/* Sidebar Section */}
             <div className=" lg:w-2/3  bg-blue-600 text-white p-10 flex flex-col justify-center shadow-2xl rounded-none lg:rounded-l-2xl ">
                 <h1 className="text-4xl font-bold mb-5 lg:leading-tight">

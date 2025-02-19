@@ -72,7 +72,7 @@ const Navbar = () => {
                 )}
             </li> */}
 
-            <li className="dropdown dropdown-end">
+            <li className="dropdown dropdown-end z-[1]">
                 {/* 🔹 Profile Icon / Login Icon */}
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
