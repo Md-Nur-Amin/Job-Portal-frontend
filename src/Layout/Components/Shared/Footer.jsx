@@ -21,7 +21,7 @@ const Footer = () => {
 
     return (
         <div>
-            <footer className="bg-base-200 text-base-content">
+            <footer className="text-base-content">
                 {/* Newsletter Section */}
                 <div className="bg-accent text-accent-content py-12 rounded-t-3xl my-10">
                     <div className="container mx-auto px-4">

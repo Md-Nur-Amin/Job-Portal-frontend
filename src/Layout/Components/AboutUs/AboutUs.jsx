@@ -41,11 +41,11 @@ const AboutUs = () => {
     };
 
     return (
-        <div className="min-h-screen relative overflow-hidden my-20 shadow-2xl   lg:mx-5 rounded-xl">
+        <div className="min-h-screen relative overflow-hidden my-20 mx-2 shadow-2xl lg:mx-5 rounded-xl bg-gradient-to-r from-[#e9ebff] to-[#f8f9ff]">
             {/* Background Blob */}
             <div className="absolute left-0 top-0 w-full h-full bg-[url('')] bg-cover bg-center opacity-10"></div>
 
-            <div className="container mx-auto px-4 py-16 relative">
+            <div className="container mx-auto px-5 py-16 relative">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-8 lg:ml-20 lg:px-14">
@@ -59,20 +59,20 @@ const AboutUs = () => {
                     </div>
 
                     {/* Split Image Layout */}
-                    <div className="flex gap-4 items-center justify-center   min-h-screen p-6">
-                        <div className="relative flex gap-3">
+                    <div className="flex gap-4 items-center justify-center min-h-screen p-6">
+                        <div className="relative flex gap-3 max-w-full flex-wrap md:flex-nowrap justify-center">
                             {/* Left Panel */}
-                            <div className="w-36 h-80 overflow-hidden rounded-lg shadow-lg">
+                            <div className="lg:w-36 lg:h-80 w-0 h-0 overflow-hidden rounded-lg shadow-lg">
                                 <img src={slides[activeIndex].image} alt="Split Image" className="w-full h-full object-cover object-left" />
                             </div>
                             
                             {/* Center Panel */}
-                            <div className="w-40 h-96 overflow-hidden rounded-lg shadow-lg">
+                            <div className="lg:w-40 lg:h-96 overflow-hidden rounded-lg shadow-lg">
                                 <img src={slides[activeIndex].image} alt="Split Image" className="w-full h-full object-cover object-center" />
                             </div>
                             
                             {/* Right Panel */}
-                            <div className="w-36 h-80 overflow-hidden rounded-lg shadow-lg">
+                            <div className="lg:w-36 lg:h-80 w-0 h-0 overflow-hidden rounded-lg shadow-lg">
                                 <img src={slides[activeIndex].image} alt="Split Image" className="w-full h-full object-cover object-right" />
                             </div>
                         </div>
