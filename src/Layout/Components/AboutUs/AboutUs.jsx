@@ -59,7 +59,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* Split Image Layout */}
-                    <div className="flex gap-4 items-center justify-center min-h-screen p-6">
+                    <div className="flex items-center justify-center min-h-screen p-6">
                         <div className="relative flex gap-3 max-w-full flex-wrap md:flex-nowrap justify-center">
                             {/* Left Panel */}
                             <div className="lg:w-36 lg:h-80 w-0 h-0 overflow-hidden rounded-lg shadow-lg">
