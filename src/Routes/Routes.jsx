@@ -10,6 +10,7 @@ import UpdateProfile from "../Layout/Components/UpdateProfile/UpdateProfile";
 import Profile from "../Layout/Components/Profile/Profile";
 import ResumeBuilder from "../Layout/Components/ResumeBuilder/ResumeBuilder";
 import ErrorPage from "../Layout/Components/ErrorPage/ErrorPage";
+import HelpCenter from "../Layout/Components/HelpCenter/HelpCenter";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         {
           path: "/resumeBuilder",
           element: <PrivateRoute> <ResumeBuilder></ResumeBuilder> </PrivateRoute>
+        },
+        {
+          path: "/help",
+          element: <HelpCenter></HelpCenter>
         }
       ]
     },

@@ -22,7 +22,7 @@ const Home = () => {
                     <div className="space-y-6 mt-8">
                         {/* Hero Banner */}
                         <div
-                            className="relative min-h-[600px] flex items-center justify-center bg-cover bg-center mb-12"
+                            className="relative min-h-[600px] bg-fixed flex items-center justify-center bg-cover bg-center mb-12"
                             style={{
                                 backgroundImage:
                                     'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
@@ -140,7 +140,7 @@ const Home = () => {
 
             {/* Why choose Jobtale section */}
             <div>
-                <section className="bg-gray-100 py-20 px-4 md:px-20 my-20 ">
+                <section className="bg-gray-100 py-20 px-4 md:px-20 my-24 ">
                     <div className="max-w-6xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Jobtale</h2>
 
@@ -197,12 +197,23 @@ const Home = () => {
 
 
             {/* Contact Section */}
-            <div className="grid lg:grid-cols-2 items-center gap-10 bg-slate-100 px-6 pl-6 lg:pl-20 py-10 ">
-                <SendMail />
-                <div>
-                    <Login />
+
+            <div className=' bg-slate-100 items-center py-20'>
+                <div className='text-center lg:mx-40 mx-10'>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-4">Get in Touch With Us</h2>
+                    <p className="text-gray-700 mb-6 lg:px-40">
+                        Whether you're looking for your next career opportunity or seeking top talent for your company, we're here to help.
+                        Reach out to us with any questions, feedback, or support inquiries—we'd love to hear from you!
+                    </p>
+                </div>
+                <div className="grid lg:grid-cols-2 items-center lg:ml-20 px-3 lg:px-6 lg:pl-6 ">
+                    <SendMail />
+                    <div>
+                        <Login />
+                    </div>
                 </div>
             </div>
+
 
 
 

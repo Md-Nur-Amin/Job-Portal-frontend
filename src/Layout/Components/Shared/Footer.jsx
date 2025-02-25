@@ -123,7 +123,7 @@ const Footer = () => {
                                     <Link to="/resumeBuilder" className="hover:text-primary transition-colors">Resume Builder</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:text-primary transition-colors">Help Center</a>
+                                    <Link to="/help" className="hover:text-primary transition-colors">Help Center</Link>
                                 </li>
                             </ul>
                         </div>
@@ -169,7 +169,7 @@ const Footer = () => {
                                 <span>•</span>
                                 <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
                                 <span>•</span>
-                                <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
+                                <Link to="/terms" className="hover:text-primary transition-colors">Cookie Policy</Link>
                             </div>
                         </div>
                     </div>
