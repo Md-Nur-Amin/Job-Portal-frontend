@@ -15,11 +15,11 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Home = () => {
     return (
-        <div className="space-y-8 mb-40">
-            <div className="card bg-base-100 shadow-x mb-40">
+        <div className="space-y-8 mb-40 ">
+            <div className="shadow-x mb-40 ">
 
-                <div className=''>
-                    <div className="space-y-6 mt-8">
+                <div className='mt-10'>
+                    <div className="space-y-6 mt-8 ">
                         {/* Hero Banner */}
                         <div
                             className="relative min-h-[600px] bg-fixed flex items-center justify-center bg-cover bg-center mb-12"

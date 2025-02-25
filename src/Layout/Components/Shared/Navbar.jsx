@@ -109,7 +109,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="bg-gray-300 shadow-lg rounded-xl mt-5 mx-5">
+        <div className="bg-gray-100 shadow-lg rounded-xl mt-5 mx-5">
 
             <div className="container mx-auto px-4">
 
