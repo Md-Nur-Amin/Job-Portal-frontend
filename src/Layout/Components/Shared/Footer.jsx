@@ -111,7 +111,7 @@ const Footer = () => {
                             <h4 className="text-xl font-bold mb-4">Resources</h4>
                             <ul className="space-y-2">
                                 <li>
-                                    <a href="#" className="hover:text-primary transition-colors">About Us</a>
+                                    <Link to="/aboutUs" className="hover:text-primary transition-colors">About Us</Link>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-primary transition-colors">Career Advice</a>

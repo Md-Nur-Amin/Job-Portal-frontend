@@ -11,6 +11,7 @@ import Profile from "../Layout/Components/Profile/Profile";
 import ResumeBuilder from "../Layout/Components/ResumeBuilder/ResumeBuilder";
 import ErrorPage from "../Layout/Components/ErrorPage/ErrorPage";
 import HelpCenter from "../Layout/Components/HelpCenter/HelpCenter";
+import AboutUs from "../Layout/Components/AboutUs/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         {
           path: "/help",
           element: <HelpCenter></HelpCenter>
+        },
+        {
+          path:"/aboutUs",
+          element: <AboutUs></AboutUs>
         }
       ]
     },
