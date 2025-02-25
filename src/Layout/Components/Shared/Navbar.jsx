@@ -54,24 +54,6 @@ const Navbar = () => {
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"> <FaUser /> <Link to="/SignUp"> Register Profile</Link> </li>
 
 
-            {/* <li className="flex items-center space-x-1 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0">
-                <MdLogin />
-                {user ? (
-                    <>
-                        <button onClick={handleLogOut} className="">Log Out</button>
-                        <div className="w-8 h-8 rounded-full overflow-hidden">
-                            <img
-                                src={user.photoURL}
-                                alt="User profile"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </>
-                ) : (
-                    <Link to="/login">Log In</Link>
-                )}
-            </li> */}
-
             <li className="dropdown dropdown-end z-[1]">
                 {/* 🔹 Profile Icon / Login Icon */}
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
