@@ -1,12 +1,16 @@
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 import Map from '../Map/Map';
 import SendMail from './SendMail';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
 
 
     return (
         <div className="my-16 mx-4 md:mx-40 space-y-12">
+            <Helmet>
+                <title>Jobtale | Contact Us with email </title>
+            </Helmet>
             <h1 className="text-3xl font-bold text-center">Contact Us</h1>
             <p className="text-center text-gray-500">Get in touch with us for any questions or concerns</p>
 
