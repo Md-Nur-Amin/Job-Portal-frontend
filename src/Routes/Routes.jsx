@@ -12,6 +12,12 @@ import ResumeBuilder from "../Layout/Components/ResumeBuilder/ResumeBuilder";
 import ErrorPage from "../Layout/Components/ErrorPage/ErrorPage";
 import HelpCenter from "../Layout/Components/HelpCenter/HelpCenter";
 import AboutUs from "../Layout/Components/AboutUs/AboutUs";
+import JobPost from "../Layout/Components/Job/JobPost";
+import Alljobs from "../Layout/Components/AllJobs/Alljobs";
+import JobDetails from "../Layout/Components/AllJobs/JobDetails";
+import JobApplication from "../Layout/Components/AllJobs/JobApplication";
+import Notifications from "../Layout/Components/Notifications/Notifications";
+import LatestJobs from "../Layout/Components/AllJobs/LatestJobs";
 
 
 const router = createBrowserRouter([
@@ -52,6 +58,31 @@ const router = createBrowserRouter([
           path: "/resumeBuilder",
           element: <PrivateRoute> <ResumeBuilder></ResumeBuilder> </PrivateRoute>
         },
+        {
+          path: "/jobPost",
+          element: <PrivateRoute><JobPost></JobPost></PrivateRoute>
+        },
+        {
+          path: "/allJobs",
+          element: <Alljobs></Alljobs>
+        },
+        {
+          path: "/JobDetails/:id",
+          element: <PrivateRoute> <JobDetails></JobDetails> </PrivateRoute>
+        },
+        {
+          path: "/latestJobs",
+          element: <LatestJobs></LatestJobs>
+        },
+        {
+          path: "/notification",
+          element: <PrivateRoute> <Notifications></Notifications> </PrivateRoute>
+        },
+        {
+          path: "/jobApplication/:id",
+          element: <PrivateRoute> <JobApplication></JobApplication> </PrivateRoute>
+        },
+
         {
           path: "/help",
           element: <HelpCenter></HelpCenter>

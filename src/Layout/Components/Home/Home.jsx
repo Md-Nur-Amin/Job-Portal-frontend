@@ -11,6 +11,10 @@ import content from "../../../assets/contentManagement.png"
 import SendMail from '../Contact/SendMail';
 import Login from '../../AuthForm/Login/Login';
 import { Typewriter } from 'react-simple-typewriter';
+import Alljobs from '../AllJobs/Alljobs';
+import { Link } from 'react-router-dom';
+import LatestJobs from '../AllJobs/LatestJobs';
+
 
 
 const Home = () => {
@@ -55,7 +59,7 @@ const Home = () => {
 
 
                                 {/* Search Bar */}
-                                <div className="bg-base-100 p-4 rounded-lg shadow-xl max-w-3xl mx-auto mb-8">
+                                {/* <div className="bg-base-100 p-4 rounded-lg shadow-xl max-w-3xl mx-auto mb-8">
                                     <div className="flex flex-col md:flex-row gap-4">
                                         <div className="flex-1 relative">
                                             <FaSearch className="absolute left-3 top-3 text-gray-400" />
@@ -75,7 +79,7 @@ const Home = () => {
                                         </div>
                                         <button className="btn bg-sky-500 text-black hover:bg-sky-400">Search Jobs</button>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -135,6 +139,20 @@ const Home = () => {
 
             </div>
 
+            {/* Jobs picks for you */}
+            <div className='mb-20'>
+                <h1 className='text-center text-3xl font-bold text-gray-500'>Job picks for you </h1>
+                <Alljobs limit={4}></Alljobs>
+                <div className="flex justify-center items-center">
+                    <button className="btn items-center border-sky-600 rounded-xl text-sky-600">
+                        <Link to="/Alljobs">More Oppoturnities</Link>
+                    </button>
+                </div>
+            </div>
+
+
+            {/* Latest job oppoturnities */}
+            <LatestJobs></LatestJobs>
 
 
 
@@ -213,11 +231,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
         </div>
 

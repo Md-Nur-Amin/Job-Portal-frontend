@@ -42,7 +42,7 @@ const Navbar = () => {
 
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0">
                 <FaBriefcase />
-                <Link to="/jobs">Jobs</Link>
+                <Link to="/allJobs">Jobs</Link>
             </li>
 
             <li className="flex items-center space-x-2 text-black text-sm font-sans relative hover:text-red-500 cursor-pointer transition-all ease-in-out before:transition-all before:ease-in-out before:duration-700 before:absolute before:bg-red-500 before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0"><FaUsers /><Link to="/network">Network</Link>
@@ -81,6 +81,14 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <Link to="/updateProfile" className='font-medium'>Update Profile</Link>
+                            </li>
+
+                            <li>
+                                <Link to="/jobPost" className='font-medium'> Post a job </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/notification" className='font-medium'> Notifications </Link>
                             </li>
 
                             <li>

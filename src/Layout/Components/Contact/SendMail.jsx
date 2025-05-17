@@ -10,8 +10,7 @@ const SendMail = () => {
         e.preventDefault();
         emailjs
             .sendForm('service_p9uxy8w', 'template_53jyaw5', form.current, {
-                publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
+                publicKey: "_ldzeXkBrpyrmgniI", // Correct: Key is a string
             })
             .then(
                 () => {
@@ -28,11 +27,10 @@ const SendMail = () => {
                         title: 'Failed to Send',
                         text: 'There was an error sending your message. Please try again later.',
                     });
+                    console.log('Error:', error);
                 },
             );
     };
-
-
 
     return (
         <div>
@@ -46,7 +44,6 @@ const SendMail = () => {
                     <button type="submit" className="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition">Send Message</button>
                 </form>
             </div>
-
         </div>
     );
 };

@@ -1,5 +1,7 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { authContext } from '../../Provider/AuthProvider';
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+
 import { Link } from 'react-router-dom';
 import { FiAlertTriangle } from "react-icons/fi";
 import { FaRegEye, FaRegEyeSlash, FaGithub } from "react-icons/fa";
@@ -14,6 +16,14 @@ const Login = () => {
     const [email, setEmail] = useState('');
 
 
+    const captchaRef = useRef(null);
+
+    useEffect(() => {
+        loadCaptchaEnginge(6);
+    }, [])
+
+
+    const [disableLogin, setDisableLogin] = useState(true)
 
 
     const handleLogin = e => {
@@ -63,12 +73,26 @@ const Login = () => {
             });
     };
 
+    const handleValidateCaptcha = () => {
+        const user_captcha_value = captchaRef.current.value;
+
+        if (validateCaptcha(user_captcha_value) == true) {
+            setDisableLogin(false)
+        }
+
+        else {
+            setDisableLogin(true)
+        }
+    }
+
 
     return (
         <div className="min-h-screen flex items-center justify-center">
-            
+
             <div className="bg-base-100 lg:w-2/3 shadow-2xl p-8 my-10 rounded-2xl">
                 <h1 className="text-3xl font-bold text-center mb-5"> Account Login </h1>
+
+                {/* email */}
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text text-lg">Email</span></label>
@@ -81,8 +105,9 @@ const Login = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-
                     </div>
+
+                    {/* Password */}
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text text-lg">Password</span></label>
                         <div className="relative w-full">
@@ -104,8 +129,30 @@ const Login = () => {
                             <a onClick={handleForgetPass} href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
+
+
+                    {/* Captcha */}
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <LoadCanvasTemplate />
+                        </label>
+                        <div className="relative w-full">
+                            <input
+                                type="text"
+                                name="captcha"
+                                ref={captchaRef}
+                                placeholder="Enter the captcha above"
+                                className="input input-bordered w-full text-lg pr-12"
+                                required
+                            />
+                            <button onClick={handleValidateCaptcha} className='btn btn-outline btn-xs my-1' > Validate Captcha </button>
+                        </div>
+                    </div>
+
+
+                    {/* Login button */}
                     <div className="form-control mt-4">
-                        <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-base py-2 w-full">
+                        <button disabled={disableLogin} type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 text-white text-base py-2 w-full">
                             Login
                         </button>
                     </div>
